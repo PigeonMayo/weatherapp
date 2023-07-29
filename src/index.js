@@ -2,9 +2,7 @@
 import React from 'react';
 import  ReactDOM  from "react-dom/client";
 import App from "./App"
-import todaysWeather from "./api"
 
-todaysWeather();
 //2) get a reference to the div with ID root
 const el  = document.getElementById('root');
 
