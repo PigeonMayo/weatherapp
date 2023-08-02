@@ -1,12 +1,14 @@
 import SearchBar from "./components/SearchBar"
-import todaysWeather from './api'
+import {todaysWeather,forecast,history} from './api'
 
 
 function App(){
 
     const handleSubmit = (location)=>{
-        console.log("This will search for location ",location)
-        todaysWeather(location)
+        console.log("This will search for location ",location);
+        todaysWeather(location);
+        forecast(location);
+        history(location);
     }
 
     return <div>
