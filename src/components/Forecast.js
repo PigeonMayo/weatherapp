@@ -1,14 +1,22 @@
+import './Forecast.css'
+
+
 function Forecast ({weather}){
-return <div>
+return <div className="weather-card" >
+    
+    <h1> {weather.day.avgtemp_c} °C</h1>
+    <img src={weather.day.condition.icon} alt={weather.day.condition.text}/>
+
+    <div className='container'>
     <div>{weather.day.condition.text}</div>
 
-    <img src={weather.day.condition.icon} alt={weather.day.condition.text}/>
 
     <div>{weather.day.daily_chance_of_rain} %</div>
     
-    <div> average temp: {weather.day.avgtemp_c}</div>
-
-    <div>Low: {weather.day.mintemp_c}  High: {weather.day.maxtemp_c} </div>
+    <div>High: {weather.day.maxtemp_c} °C</div>
+    <div>Low: {weather.day.mintemp_c} °C</div>
+    </div>
+     
 
 </div>    
 }

@@ -1,4 +1,7 @@
 .weather-list {
-    columns:6 200px;
-    column-gap: 10px;
+    columns:3 200px;
+    column-gap: 100px;
+    margin-top: 20px;
 }
+
+
