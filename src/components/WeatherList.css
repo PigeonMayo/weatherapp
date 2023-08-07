@@ -1,7 +1,11 @@
 .weather-list {
-    columns:3 200px;
-    column-gap: 100px;
     margin-top: 20px;
+    margin: 20px 300px 0 300px;
+    columns: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
 }
 
 
