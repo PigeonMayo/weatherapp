@@ -1,18 +1,34 @@
+import { useState } from "react"
 import SearchBar from "./components/SearchBar"
+import Card from './components/WeatherList'
+
 import {todaysWeather,forecast,history} from './api'
 
 
 function App(){
 
-    const handleSubmit = (location)=>{
-        console.log("This will search for location ",location);
-        todaysWeather(location);
-        forecast(location);
-        history(location);
+    const [weatherToday,setTodaysWeather] = useState([]);
+    const [weatherForecast,setForecastWeather] = useState([]);
+    const [weatherHistory,setHistoryWeather] = useState([]);
+
+    const handleSubmit = async(location)=>{
+        const resultToday = await todaysWeather(location);
+        setTodaysWeather(resultToday);
+        const resultForecast = await forecast(location);
+        setForecastWeather(resultForecast);
+        const resultHistory = await history(location);
+        setHistoryWeather(resultHistory);
+
+
+        console.log("Today: ",resultToday);
+        console.log("Forecast: ",resultForecast);
+        console.log("History: ",resultHistory);
+
     }
 
     return <div>
         <SearchBar onSubmit = {handleSubmit}/>
+        <Card  weatherToday = {weatherToday} weatherForecast = {weatherForecast} weatherHistory = {weatherHistory} />
     </div>
 }
 

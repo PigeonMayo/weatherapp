@@ -10,8 +10,8 @@ const todaysWeather = async (location) => {
         }
     });
 
-    console.log(response);
-    return response;
+    //console.log(response);
+    return response.data.current;
 };
 
 const forecast = async (location) => {
@@ -23,8 +23,8 @@ const forecast = async (location) => {
          }
      });
  
-     console.log(response);
-     return response;
+     //console.log(response);
+     return response.data.forecast.forecastday;
  };
 
  const history = async (location) => {
@@ -36,8 +36,8 @@ const forecast = async (location) => {
          }
      });
  
-     console.log(response);
-     return response;
+     //console.log(response);
+     return response.data.forecast;
  };
 
 export {todaysWeather,forecast,history};

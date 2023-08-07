@@ -1,3 +1,4 @@
+import './SearchBar.css';
 import { useState } from "react";
 
 
@@ -15,9 +16,10 @@ function SearchBar({onSubmit}){
         setLocation(event.target.value);
     }
     
-    return <div>
+    return <div className='search-bar'>
         <form onSubmit={handleFormSubmit}>
-            <input value ={location} onChange={handleChange}/>
+            <h1>Weather App</h1>
+            <input placeholder="please enter your address e.g. (Durban)" value ={location} onChange={handleChange}/>
         </form>
 
     </div>
