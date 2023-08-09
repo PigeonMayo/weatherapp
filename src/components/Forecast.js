@@ -2,16 +2,17 @@ import './Forecast.css'
 
 
 function Forecast ({weather}){
-return <div className="weather-card" >
+return <div className="weather-card" note>
     
-    <h1> {weather.day.avgtemp_c} °C</h1>
-    <img src={weather.day.condition.icon} alt={weather.day.condition.text}/>
+    <img src={weather.day.condition.icon} alt={weather.day.condition.text} />
+    <h3> {weather.day.avgtemp_c} °C</h3>
+
 
     <div className='container'>
-    <div>{weather.day.condition.text}</div>
+    <h5>{weather.day.condition.text}</h5>
 
 
-    <div>{weather.day.daily_chance_of_rain} %</div>
+    <div>Chance of Rain: {weather.day.daily_chance_of_rain} %</div>
     
     <div>High: {weather.day.maxtemp_c} °C</div>
     <div>Low: {weather.day.mintemp_c} °C</div>

@@ -7,7 +7,13 @@ function WeatherList({weatherToday,weatherForecast,weatherHistory}){
         return <Forecast key={weather.date_epoch} weather = {weather} />
     })
 
-    return <div className='weather-list'>{weatherForecastList}</div>
+    return <div>
+        
+        <h2>Today</h2>
+        <div className='weather-list'>{weatherToday}</div>
+        <h2>ForeCast</h2>
+        <div className='weather-list'>{weatherForecastList}</div>
+    </div>
 
 }
 

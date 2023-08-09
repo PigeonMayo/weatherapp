@@ -1,23 +1,35 @@
 
 .weather-card  {
     /* Add shadows to create the "card" effect */
+    border-radius:10px;
+	  -webkit-border-radius:10px;
+	  -moz-border-radius:10px;
+
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     background-color: rgb(8, 87, 87);
     color: white;
-    width: 300px;
+    width: 250px;
     text-align: center;
     padding-top: .25rem;
-
+    
   }
 
   .weather-card img{
     padding-bottom: .5rem;
+    min-height: 100px;
+    min-width: 100px;
   }
   
   /* On mouse-over, add a deeper shadow */
   .weather-card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  .weather-card h3{
+    padding-bottom: 150px ;
+    text-decoration-line: underline;
+
   }
   
   /* Add some padding inside the card container */

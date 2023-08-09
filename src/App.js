@@ -1,3 +1,5 @@
+
+import './App.css'
 import { useState } from "react"
 import SearchBar from "./components/SearchBar"
 import Card from './components/WeatherList'
@@ -26,7 +28,7 @@ function App(){
 
     }
 
-    return <div>
+    return <div className='app-header'>
         <SearchBar onSubmit = {handleSubmit}/>
         <Card  weatherToday = {weatherToday} weatherForecast = {weatherForecast} weatherHistory = {weatherHistory} />
     </div>
