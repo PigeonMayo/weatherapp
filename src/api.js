@@ -1,7 +1,7 @@
 import axios from "axios";
 import moment from 'moment'
 
-
+//Today
 const todaysWeather = async (location) => {
    const response = await axios.get( 'http://api.weatherapi.com/v1/current.json' ,{
         params:{
@@ -11,9 +11,10 @@ const todaysWeather = async (location) => {
     });
 
     //console.log(response);
-    return response.data.current;
+    return response.data;
 };
 
+//Tomorrow
 const forecast = async (location) => {
     const response = await axios.get( 'http://api.weatherapi.com/v1/forecast.json' ,{
          params:{
@@ -27,6 +28,7 @@ const forecast = async (location) => {
      return response.data.forecast.forecastday;
  };
 
+ //Yesterday
  const history = async (location) => {
     const response = await axios.get( 'http://api.weatherapi.com/v1/history.json' ,{
          params:{
@@ -41,4 +43,6 @@ const forecast = async (location) => {
  };
 
 export {todaysWeather,forecast,history};
+
+
 

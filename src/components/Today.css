@@ -1,5 +1,5 @@
 
-.weather-card  {
+.weather-card-today  {
     /* Add shadows to create the "card" effect */
     border-radius:10px;
 	  -webkit-border-radius:10px;
@@ -15,25 +15,25 @@
     
   }
 
-  .weather-card img{
+  .weather-card-today img{
     padding-bottom: .5rem;
     min-height: 100px;
     min-width: 100px;
   }
   
   /* On mouse-over, add a deeper shadow */
-  .weather-card:hover {
+  .weather-card-today:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
 
-  .weather-card h3{
-    padding-bottom: 10px ;
+  .weather-card-today h3{
+    padding-bottom: 150px ;
     text-decoration-line: underline;
 
   }
   
   /* Add some padding inside the card container */
-  .container {
+  .container-today {
     padding: 10px 16px;
     background-color: white;
     color: black;
