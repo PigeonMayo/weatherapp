@@ -1,6 +1,7 @@
 import './WeatherList.css'
 import Forecast from "./Forecast";
 import Today from './Today';
+import History from './History';
 
 function WeatherList({weatherToday,weatherForecast,weatherHistory}){
 
@@ -9,20 +10,37 @@ function WeatherList({weatherToday,weatherForecast,weatherHistory}){
     })
 
     const weatherTodayList = (weatherToday) =>{
-        if (weatherToday.items < 0){
-            return <Today  weatherToday = {weatherToday.current}/>
-        }
+        //if (weatherToday && weatherToday){
+          // return <Today  weatherToday = {weatherToday.current}/>
+        //}
+        //else{
+         //   return <div>Boot</div>
+        //
+        console.log(weatherToday);
+    }
       
+    
+
+    const weatherHistoryList = (weatherHistory) =>{
+        
+        return <History  weatherHistory = {weatherHistory.forecast}/>
+       // <!--<div>{weatherTodayList(weatherToday)}</div> -->
+
+        
     }
 
     return <div>
         
         <h2>Today</h2>
-        <div>{weatherTodayList(weatherToday)}</div>
+        <div>{weatherTodayList(weatherToday)}</div> 
         <h2>ForeCast</h2>
         <div className='weather-forecast'>{weatherForecastList}</div>
+        <h2>History</h2>
+        <div>{weatherHistoryList(weatherHistory)}</div>
+
     </div>
 
 }
 
 export default WeatherList;
+
