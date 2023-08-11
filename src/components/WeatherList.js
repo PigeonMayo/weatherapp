@@ -10,13 +10,12 @@ function WeatherList({weatherToday,weatherForecast,weatherHistory}){
     })
 
     const weatherTodayList = (weatherToday) =>{
-        //if (weatherToday && weatherToday){
-          // return <Today  weatherToday = {weatherToday.current}/>
-        //}
-        //else{
-         //   return <div>Boot</div>
-        //
-        console.log(weatherToday);
+        
+          if (weatherToday.current){
+            return <Today  weatherToday = {weatherToday.current}/>
+         }
+        
+        //console.log(weatherToday);
     }
       
     
