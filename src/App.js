@@ -31,7 +31,7 @@ function App(){
 
     }
 
-
+    //an array that appends and returns 7 days worth of data
     const Historydata = async (location) =>{
         const UpdatedHistory = [];
 
