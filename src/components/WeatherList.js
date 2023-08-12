@@ -15,7 +15,7 @@ function WeatherList({weatherToday,weatherForecast,weatherHistory}){
             return <Today  weatherToday = {weatherToday.current}/>
          }
         
-        //console.log(weatherToday);
+        console.log(weatherToday.current);
     }
       
     

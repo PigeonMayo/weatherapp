@@ -1,5 +1,4 @@
 import axios from "axios";
-import moment from 'moment'
 
 //Today
 const todaysWeather = async (location) => {
@@ -29,17 +28,17 @@ const forecast = async (location) => {
  };
 
  //Yesterday
- const history = async (location) => {
+ const history = async (location,HistoryDate) => {
     const response = await axios.get( 'http://api.weatherapi.com/v1/history.json' ,{
          params:{
              key: "2a5bacf98bcd4765beb122454220406",
              q: location,
-             dt: moment().subtract(7,'d').format("YYYY-MM-DD")
+             dt: HistoryDate
          }
      });
  
      //console.log(response);
-     return response.data.forecast;
+     return response.data.forecast.forecastday;
  };
 
 export {todaysWeather,forecast,history};
