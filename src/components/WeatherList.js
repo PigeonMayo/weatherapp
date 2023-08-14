@@ -15,27 +15,26 @@ function WeatherList({weatherToday,weatherForecast,weatherHistory}){
             return <Today  weatherToday = {weatherToday.current}/>
          }
         
-        console.log(weatherToday.current);
     }
       
+    const weatherHistoryList = weatherHistory.map((weather) => {
+        
+        return <History  key={weather.date_epoch} weather = {weather} />
+
+    }) 
+        
+
+        
     
-
-    const weatherHistoryList = (weatherHistory) =>{
-        
-        return <History  weatherHistory = {weatherHistory.forecast}/>
-       // <!--<div>{weatherTodayList(weatherToday)}</div> -->
-
-        
-    }
 
     return <div>
         
-        <h2>Today</h2>
-        <div>{weatherTodayList(weatherToday)}</div> 
-        <h2>ForeCast</h2>
+        <h2 style={{textAlign: 'center'}}>Today</h2>
+        <div className='weather-today' >{weatherTodayList(weatherToday)}</div> 
+        <h2 style={{textAlign: 'center'}}>ForeCast</h2>
         <div className='weather-forecast'>{weatherForecastList}</div>
-        <h2>History</h2>
-        <div>{weatherHistoryList(weatherHistory)}</div>
+        <h2 style={{textAlign: 'center'}}>History</h2>
+        <div className='weather-history' >{weatherHistoryList}</div>
 
     </div>
 

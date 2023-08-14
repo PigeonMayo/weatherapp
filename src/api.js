@@ -37,7 +37,7 @@ const forecast = async (location) => {
          }
      });
  
-     //console.log(response);
+     console.log( 'Check here: ' ,response);
      return response.data.forecast.forecastday;
  };
 

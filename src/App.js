@@ -14,6 +14,11 @@ function App(){
     const [weatherForecast,setForecastWeather] = useState([]);
     const [weatherHistory,setHistoryWeather] = useState([]);
 
+
+    // useEffect(() => {
+    //     console.log("History: ",weatherHistory);
+    // },[weatherHistory]);
+
     const handleSubmit = async(location)=>{
         const resultToday = await todaysWeather(location);
         setTodaysWeather(resultToday);
@@ -22,25 +27,32 @@ function App(){
 
         //retrieves the history data and ammends the array 
         const retrieveHistory = await Historydata(location);
-        setHistoryWeather(retrieveHistory);
+        setHistoryWeather([].concat(...retrieveHistory));
         
 
-        console.log("Today: ",resultToday);
-        console.log("Forecast: ",resultForecast);
-        console.log("History: ",weatherHistory);
+        // console.log("Today: ",resultToday);
+        // console.log("Forecast: ",resultForecast);
+        // console.log("History: ",weatherHistory);
 
     }
 
     //an array that appends and returns 7 days worth of data
     const Historydata = async (location) =>{
-        const UpdatedHistory = [];
+        let UpdatedHistory = [];
 
         for(let i = 1; i < 7 ; i++) {
 
             let HistoryDate = moment().subtract(i,'d').format("YYYY-MM-DD");
             const resultHistory = await history(location,HistoryDate);
-            UpdatedHistory.unshift(resultHistory);
+            // UpdatedHistory.unshift(resultHistory);
 
+            UpdatedHistory = [
+                resultHistory
+                ,...UpdatedHistory
+                
+            ]
+
+            // console.log(UpdatedHistory);
         }
 
         return UpdatedHistory

@@ -3,13 +3,26 @@
     margin-top: 20px ;
     display: grid;
     grid-template-columns: 250px 250px 250px;
-    grid-gap: 50px;
+    grid-gap: 10px;
     justify-content: center;
     align-items: center;
     
   }
 
   .weather-today {
+    display: flex;
     margin-top: 20px ;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .weather-history {
+    margin-top: 20px ;
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px 250px 250px;
+    grid-gap: 50px;
+    justify-content: center;
+    align-items: center;
     
   }
