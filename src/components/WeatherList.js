@@ -24,17 +24,30 @@ function WeatherList({weatherToday,weatherForecast,weatherHistory}){
     }) 
         
 
-        
-    
 
     return <div>
         
-        <h2 style={{textAlign: 'center'}}>Today</h2>
-        <div className='weather-today' >{weatherTodayList(weatherToday)}</div> 
-        <h2 style={{textAlign: 'center'}}>ForeCast</h2>
-        <div className='weather-forecast'>{weatherForecastList}</div>
-        <h2 style={{textAlign: 'center'}}>History</h2>
-        <div className='weather-history' >{weatherHistoryList}</div>
+        { weatherToday.current &&
+        <div>
+            <h2 style={{textAlign: 'center'}}>Today</h2>
+            <div className='weather-today' >{weatherTodayList(weatherToday)}</div> 
+        </div>
+
+        }
+
+        { weatherForecast.length >0  &&
+            <div>
+            <h2 style={{textAlign: 'center'}}>ForeCast</h2>
+            <div className='weather-forecast'>{weatherForecastList}</div>
+            </div>
+        }
+
+        { weatherHistory.length > 0 &&
+            <div>
+                <h2 style={{textAlign: 'center'}}>History</h2>
+                <div className='weather-history' >{weatherHistoryList}</div>
+            </div>
+        }
 
     </div>
 

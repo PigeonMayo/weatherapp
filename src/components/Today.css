@@ -1,5 +1,5 @@
 
-.weather-card-today  {
+.weather-card-today {
     /* Add shadows to create the "card" effect */
     border-radius:10px;
 	  -webkit-border-radius:10px;
@@ -14,6 +14,8 @@
     padding-top: .25rem;
     
   }
+
+
 
   .weather-card-today img{
     padding-bottom: .5rem;
